@@ -2,12 +2,13 @@
 import React, { useState } from 'react';
 import { View, StyleSheet } from 'react-native';
 import { Appbar, TextInput, Button, Snackbar } from 'react-native-paper';
-import { useDispatch } from 'react-redux';
+import { useDispatch, useSelector } from 'react-redux';
 import { addDraft, updateDraft } from '../store/slices/draftsSlice';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { sendEmail } from '../services/emailService';
 
 const EmailEditorScreen = ({ route, navigation }: any) => {
+  const drafts = useSelector((state: RootState) => state.drafts.drafts);
   const { draft } = route.params || {};
   const [subject, setSubject] = useState(draft?.subject || '');
   const [recipients, setRecipients] = useState(draft?.recipients || '');
@@ -15,13 +16,18 @@ const EmailEditorScreen = ({ route, navigation }: any) => {
   const [snackbarVisible, setSnackbarVisible] = useState(false);
   const [snackbarMessage, setSnackbarMessage] = useState('');
   const dispatch = useDispatch();
-
+ 
   const handleSaveDraft = () => {
     const newDraft = { id: draft?.id || Date.now().toString(), subject, recipients, body, status: 'Draft' };
     dispatch(draft ? updateDraft(newDraft) : addDraft(newDraft));
-    setSnackbarMessage('Draft Saved!');
+
+    AsyncStorage.setItem('drafts', JSON.stringify([...drafts, newDraft]));
+
+    setSnackbarMessage('Draft Saved Successfully!');
     setSnackbarVisible(true);
-    navigation.goBack();
+    setTimeout(() => {
+      navigation.goBack();
+    }, 1000);
   };
 
   const handleSendEmail = async (recipients, subject, body) => {
@@ -34,21 +40,27 @@ const EmailEditorScreen = ({ route, navigation }: any) => {
     try {
       await sendEmail(subject, recipients, body);
       const newSentEmail = { id: Date.now().toString(), subject, recipients, body, status: 'Sent' };
-      // await AsyncStorage.setItem('sentEmails', JSON.stringify([...sentEmails, newSentEmail]));
+
+      
+      AsyncStorage.setItem('sentEmails', JSON.stringify([...drafts, newSentEmail]));
+
       dispatch(draft ? updateDraft(newSentEmail) : addDraft(newSentEmail));
       setSnackbarMessage('Email Sent Successfully!');
       setSnackbarVisible(true);
-      navigation.goBack(); // Navigate back after email is sent
+      setTimeout(() => {
+        navigation.goBack();
+      }, 1000);
     } catch (error) {
       setSnackbarMessage('Failed to send email. Please try again.');
       setSnackbarVisible(true);
     }
   };
 
+
   return (
     <View style={styles.container}>
       <Appbar.Header>
-        {/* <Appbar.BackAction onPress={() => navigation.goBack()} /> */}
+        <Appbar.BackAction onPress={() => navigation.goBack()} />
         <Appbar.Content title={draft ? 'Edit Email' : 'New Email'} />
       </Appbar.Header>
 
@@ -83,7 +95,6 @@ const EmailEditorScreen = ({ route, navigation }: any) => {
         <Button mode="contained" onPress={handleSaveDraft} style={styles.button}>Save Draft</Button>
         <Button mode="contained" onPress={() => handleSendEmail(recipients, subject, body)} style={[styles.button, styles.sendButton]}>Send Email</Button>
       </View>
-
       <Snackbar
         visible={snackbarVisible}
         onDismiss={() => setSnackbarVisible(false)}

@@ -1,11 +1,11 @@
 
 import React, { useEffect, useState } from 'react';
 import { View, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
-import { Card, Text, FAB, Appbar, Avatar } from 'react-native-paper';
+import { Card, Text, FAB, Appbar, Avatar, Button } from 'react-native-paper';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store/store';
 import AsyncStorage from '@react-native-async-storage/async-storage';
-import { addDraft } from '../store/slices/draftsSlice';
+import {  setDrafts } from '../store/slices/draftsSlice';
 // import { setDrafts } from '../store/slices/draftsSlice';
 
 const HomeScreen = ({ navigation }: any) => {
@@ -18,8 +18,7 @@ const HomeScreen = ({ navigation }: any) => {
       try {
         const storedDrafts = await AsyncStorage.getItem('drafts');
         if (storedDrafts) {
-          // dispatch(setDrafts(JSON.parse(storedDrafts)));
-          dispatch(addDraft(JSON.parse(storedDrafts)));
+          dispatch(setDrafts(JSON.parse(storedDrafts)));
         }
       } catch (error) {
         console.error('Error loading drafts:', error);
@@ -31,12 +30,24 @@ const HomeScreen = ({ navigation }: any) => {
     loadEmails();
   }, [dispatch]);
 
-
+  const handleLogout = async () => {
+    try {
+      console.log('Logging out...');
+      await AsyncStorage.clear();
+      console.log('AsyncStorage cleared');
+      navigation.replace('Login');
+    } catch (error) {
+      console.error('Error logging out:', error);
+    }
+  };
   
   return (
     <View style={styles.container}>
       <Appbar.Header>
-        <Appbar.Content title="Emails" />
+        <Appbar.Content title="Email Editor" />
+        <Button mode="contained" onPress={handleLogout} style={styles.button}>
+          Logout
+        </Button>
       </Appbar.Header>
 
       {loading ? (
@@ -80,6 +91,13 @@ const styles = StyleSheet.create({
   noDraftsText: { textAlign: 'center', marginTop: 20, fontSize: 16, color: 'gray' },
   draftAvatar: { backgroundColor: '#FFA500' },
   sentAvatar: { backgroundColor: '#007BFF' },
+  button: {
+    paddingVertical: 4,
+    paddingHorizontal: 4,
+    borderRadius: 20,
+    elevation: 2,
+    marginRight: 10,
+  },
 });
 
 export default HomeScreen;
