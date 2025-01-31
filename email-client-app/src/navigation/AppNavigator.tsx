@@ -10,8 +10,8 @@ const Stack = createStackNavigator();
 const AppNavigator = () => {
   return (
     <NavigationContainer>
-      <Stack.Navigator initialRouteName="Email Editor" screenOptions={{ headerShown: false }}>
-        <Stack.Screen name="Email Editor" component={HomeScreen}  />
+      <Stack.Navigator initialRouteName="Mail-Wave" screenOptions={{ headerShown: false }}>
+        <Stack.Screen name="Mail-Wave" component={HomeScreen}  />
         <Stack.Screen name="Email" component={EmailEditorScreen} />
         <Stack.Screen name="Login" component={LoginScreen} />
       </Stack.Navigator>

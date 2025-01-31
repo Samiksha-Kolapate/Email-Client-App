@@ -1,6 +1,6 @@
 
 import React, { useEffect, useState } from 'react';
-import { View, FlatList, TouchableOpacity, StyleSheet } from 'react-native';
+import { View, FlatList, TouchableOpacity, StyleSheet, Image } from 'react-native';
 import { Card, Text, FAB, Appbar, Avatar, Button } from 'react-native-paper';
 import { useSelector, useDispatch } from 'react-redux';
 import { RootState } from '../store/store';
@@ -44,7 +44,15 @@ const HomeScreen = ({ navigation }: any) => {
   return (
     <View style={styles.container}>
       <Appbar.Header>
-        <Appbar.Content title="Email Editor" />
+      <Image
+          source={require('../../assets/images/logo.webp')} // Update the path to your logo
+          style={styles.logo}
+        />
+      <Appbar.Content
+          title="Mail-Wave"
+          titleStyle={styles.title}
+        />
+        
         <Button mode="contained" onPress={handleLogout} style={styles.button}>
           Logout
         </Button>
@@ -97,6 +105,18 @@ const styles = StyleSheet.create({
     borderRadius: 20,
     elevation: 2,
     marginRight: 10,
+  },
+  logo: {
+    width: 60,
+    height: 60,
+    borderRadius: 50,
+    marginRight: 10,
+    resizeMode: 'cover',
+    
+  },
+  title: {
+    flex: 1,
+    textAlign: 'left',
   },
 });
 
