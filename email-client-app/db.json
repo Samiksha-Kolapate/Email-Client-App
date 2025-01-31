@@ -1,0 +1,210 @@
+{
+  "drafts": [
+    {
+      "id": "1",
+      "subject": "Test Draft",
+      "recipients": "example@example.com",
+      "body": "This is a test draft email.",
+      "status": "Sent"
+    },
+    {
+      "id": "e445",
+      "subject": "hvjvj",
+      "recipients": "nbvvmg",
+      "body": "mvjv",
+      "status": "Draft"
+    },
+    {
+      "id": "493b",
+      "subject": "hvjvj",
+      "recipients": "nbvvmg",
+      "body": "mvjv",
+      "status": "Draft"
+    }
+  ],
+  "sentEmails": [
+    {
+      "id": "641f",
+      "subject": "hgvvk",
+      "recipients": "hvkjhv",
+      "body": "jvhgvjvj",
+      "status": "Sent"
+    },
+    {
+      "id": "c666",
+      "subject": "hvghv",
+      "recipients": "kmjkvh",
+      "body": "hgvjv",
+      "status": "Sent",
+      "timestamp": "2025-01-31T08:33:28.068Z"
+    },
+    {
+      "id": "c565",
+      "subject": "vhgvmgv",
+      "recipients": "bvjv",
+      "body": "hvhgvg",
+      "status": "Sent"
+    },
+    {
+      "id": "04d2",
+      "subject": "bhj,bhj,",
+      "recipients": "jknbkjbk",
+      "body": "hjjhbvkjv",
+      "status": "Sent"
+    },
+    {
+      "id": "fb1d",
+      "subject": "hgvhgvhv",
+      "recipients": "mnbjhv",
+      "body": "hjvjhv",
+      "status": "Sent"
+    },
+    {
+      "id": "c060",
+      "subject": "njvjhv",
+      "recipients": "nb",
+      "body": "jvhjvjh",
+      "status": "Sent"
+    },
+    {
+      "id": "fc48",
+      "subject": "vvhv",
+      "recipients": "bn",
+      "body": " ghvjg ",
+      "status": "Sent"
+    },
+    {
+      "id": "16f8",
+      "subject": "jvjv",
+      "recipients": "bvjhv",
+      "body": "jvjhv",
+      "status": "Sent"
+    },
+    {
+      "id": "40aa",
+      "subject": "hgvhgchgc",
+      "recipients": "bvghc",
+      "body": "hgchgchg",
+      "status": "Sent"
+    },
+    {
+      "id": "9997",
+      "subject": "hghghg",
+      "recipients": "v hgv",
+      "body": "jhhcgh",
+      "status": "Sent"
+    },
+    {
+      "id": "7832",
+      "subject": "jhbj,hb,hj",
+      "recipients": "jhhvgvmj",
+      "body": "bjvjvj",
+      "status": "Sent"
+    },
+    {
+      "id": "c245",
+      "subject": "jhbj,hb,hj",
+      "recipients": "jhhvgvmj",
+      "body": "bjvjvj",
+      "status": "Sent"
+    },
+    {
+      "id": "97d3",
+      "subject": "jvjhv,",
+      "recipients": "jhvmgv",
+      "body": "hjb,khb,kb",
+      "status": "Sent"
+    },
+    {
+      "id": "dece",
+      "subject": "jhbj,hb,hj",
+      "recipients": "jhhvgvmj nbn",
+      "body": "bjvjvj",
+      "status": "Sent"
+    },
+    {
+      "id": "490b",
+      "subject": "hchch",
+      "recipients": "chgchgc",
+      "body": "chghhgh",
+      "status": "Sent"
+    },
+    {
+      "id": "a141",
+      "subject": "hgchgchg",
+      "recipients": "jvc",
+      "body": "cghcgh",
+      "status": "Sent"
+    },
+    {
+      "id": "5522",
+      "subject": "hgmhmhgc",
+      "recipients": "22222",
+      "body": "vhggcgf",
+      "status": "Sent"
+    },
+    {
+      "id": "916e",
+      "subject": "fgcgfn",
+      "recipients": "gvchnc",
+      "body": "cfhch",
+      "status": "Sent"
+    },
+    {
+      "id": "3e9b",
+      "subject": "jhvmhv",
+      "recipients": "nv",
+      "body": "mgvmhgvmv",
+      "status": "Sent"
+    },
+    {
+      "id": "16e7",
+      "subject": "hvjvj",
+      "recipients": "nbvvmg",
+      "body": "mvjv",
+      "status": "Sent"
+    },
+    {
+      "id": "91cf",
+      "subject": "fyyjj",
+      "recipients": "hjkhfuk",
+      "body": "vkuvjvm",
+      "status": "Sent"
+    },
+    {
+      "id": "60d0",
+      "subject": "fyyjj",
+      "recipients": "hjkhfuk",
+      "body": "vkuvjvm",
+      "status": "Sent"
+    },
+    {
+      "id": "823e",
+      "subject": "gvhg",
+      "recipients": "mhbjhv",
+      "body": "hgchgchm",
+      "status": "Sent"
+    },
+    {
+      "id": "3818",
+      "subject": "hgvmgc",
+      "recipients": "hvv",
+      "body": "mghchghg",
+      "status": "Sent"
+    },
+    {
+      "id": "1558",
+      "subject": "hghgg",
+      "recipients": "hgvgf",
+      "body": "hhg",
+      "status": "Sent"
+    },
+    {
+      "id": "2c71",
+      "subject": "hgk",
+      "recipients": "vhvh",
+      "body": "vhgvh",
+      "status": "Sent"
+    }
+  ]
+}
