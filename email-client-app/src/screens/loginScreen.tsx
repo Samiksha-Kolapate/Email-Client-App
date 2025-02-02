@@ -14,7 +14,7 @@ const LoginScreen = () => {
       try {
         // Simulate saving user data on successful login
         await AsyncStorage.setItem('user', JSON.stringify({ email }));
-        navigation.replace('Home'); // Redirect to Home screen after successful login
+        navigation.replace('Mail-Wave'); // Redirect to Home screen after successful login
       } catch (error) {
         console.error('Error during login:', error);
       }
